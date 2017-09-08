@@ -1,0 +1,17 @@
+1: There's defining it in the HTML:
+
+<input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
+2: There's adding it to the DOM property for the event in Javascript:
+
+//- Using a function pointer:
+document.getElementById("clickMe").onclick = doFunction;
+
+//- Using an anonymous function:
+document.getElementById("clickMe").onclick = function () { alert('hello!'); };
+3: And there's attaching a function to the event handler using Javascript:
+
+var el = document.getElementById("clickMe");
+if (el.addEventListener)
+    el.addEventListener("click", doFunction, false);
+else if (el.attachEvent)
+    el.attachEvent('onclick', doFunction);
