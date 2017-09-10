@@ -31,3 +31,14 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
   console.log("onMessageArrived:"+message.payloadString);
 }
+
+
+// called when the client connects
+function sendTurnOn() {
+  // Once a connection has been made, make a subscription and send a message.
+  console.log("Send ON");
+  client.subscribe("World");
+  message = new Paho.MQTT.Message("ON");
+  message.destinationName = "testLight";
+  client.send(message);
+}
