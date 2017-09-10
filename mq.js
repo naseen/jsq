@@ -7,7 +7,7 @@ client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
 // connect the client
-client.connect({onSuccess:onConnect},{password:"pass"},{userName:"user"});
+client.connect({onSuccess:onConnect,password:"pass",userName:"user"});
 
 
 // called when the client connects
